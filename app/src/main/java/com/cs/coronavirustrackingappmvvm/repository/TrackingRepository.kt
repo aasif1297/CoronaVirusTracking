@@ -16,8 +16,7 @@ class TrackingRepository {
         val trackingData: MutableLiveData<TrackingResponseModel?> =
             MutableLiveData<TrackingResponseModel?>()
         trackingApi.getTrackingList(
-            "json",
-            "(Confirmed%3E%200)%20OR%20(Deaths%3E0)%20OR%20(Recovered%3E0)"
+
         )!!.enqueue(object : Callback<TrackingResponseModel?> {
             override fun onFailure(call: Call<TrackingResponseModel?>, t: Throwable) {
                 trackingData.value = null
