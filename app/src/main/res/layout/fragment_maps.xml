@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/scrollView"
     android:background="#242f3e"
     xmlns:android="http://schemas.android.com/apk/res/android"
     >
@@ -14,7 +15,7 @@
         <fragment
             xmlns:map="http://schemas.android.com/apk/res-auto"
             android:id="@+id/map"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:name="com.cs.coronavirustrackingappmvvm.component.WorkaroundMapFragment"
             android:layout_width="match_parent"
             android:layout_height="320dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -22,6 +23,26 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:context=".fragment.MapsFragment"
             map:cameraZoom="10" />
+
+        <Button
+            android:id="@+id/search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:padding="8dp"
+            android:drawableRight="@drawable/ic_search"
+            android:text="@string/search"
+            android:textAlignment="viewStart"
+            android:background="@drawable/bg_border"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/map"
+            android:gravity="start|center_vertical" />
 
         <EditText
             android:id="@+id/edt_search"
@@ -35,9 +56,8 @@
             android:layout_marginRight="24dp"
             android:drawableEnd="@drawable/ic_search"
             android:hint="Search"
+            android:visibility="gone"
             android:padding="6dp"
-            android:enabled="false"
-            android:focusable="false"
             android:textColorHint="@android:color/white"
             android:textColor="@android:color/white"
             app:layout_constraintEnd_toEndOf="parent"
@@ -49,17 +69,23 @@
             android:id="@+id/recyclerview"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="24dp"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_search" />
+            app:layout_constraintTop_toBottomOf="@+id/search" />
 
+        <ProgressBar
+            android:id="@+id/progress_circular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/map"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 </androidx.core.widget.NestedScrollView>
 

@@ -19,6 +19,7 @@
             app:contentInsetStart="0dp"
             android:layout_width="match_parent"
             android:layout_height="56dp"
+            android:visibility="gone"
             android:contentInsetEnd="0dp"
             android:contentInsetLeft="0dp"
             android:contentInsetRight="0dp"

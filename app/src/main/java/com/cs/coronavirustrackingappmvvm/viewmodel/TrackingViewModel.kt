@@ -9,7 +9,7 @@ import com.cs.coronavirustrackingappmvvm.repository.TrackingRepository
 class TrackingViewModel: ViewModel() {
     private var mutableLiveData: MutableLiveData<TrackingResponseModel?>? = null
     private var trackingRepository: TrackingRepository? = null
-    fun init(){
+    suspend fun init(){
         if (mutableLiveData != null){
             return
         }
